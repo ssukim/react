@@ -1,5 +1,5 @@
 {
-  "name": "eform-practice",
+  "name": "storybook",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -40,7 +40,6 @@
   "devDependencies": {
     "@storybook/addon-actions": "^6.1.18",
     "@storybook/addon-essentials": "^6.1.18",
-    "@storybook/addon-knobs": "^6.1.18",
     "@storybook/addon-links": "^6.1.18",
     "@storybook/node-logger": "^6.1.18",
     "@storybook/preset-create-react-app": "^3.1.6",
