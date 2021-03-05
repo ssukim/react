@@ -29,7 +29,6 @@ export default function Task({ task: { id, title, state }, onArchiveTask, onPinT
   );
 }
 
-
 Task.propTypes = {
     /** Composition of the task */
     task: PropTypes.shape({
