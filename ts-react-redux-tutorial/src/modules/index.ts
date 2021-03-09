@@ -2,8 +2,9 @@
 import {combineReducers} from 'redux';
 import counter from './counter';
 import todos from './todos';
-import github from './github';
+// import github from './github/reducer';
 // redux-saga
+import github from './github/reducer';
 import { githubSaga } from './github';
 import { all } from 'redux-saga/effects';
 
