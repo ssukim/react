@@ -1,8 +1,9 @@
 import axios, {AxiosError} from 'axios';
-import {createReducer, createAsyncAction} from 'typesafe-actions';
-import {GithubState, GithubAction} from './types';
+import {createReducer, createAsyncAction ,ActionType} from 'typesafe-actions';
+// import {GithubState, GithubAction} from './types';
 // import {GET_USER_PROFILE, GET_USER_PROFILE_SUCCESS, GET_USER_PROFILE_ERROR} from './actions';
 // import { GithubProfile } from '../../api/github';
+
 
 export async function getUserProfile(username:string) {
     // Generic을 통해 응답 데이터의 타입을 설정
@@ -50,11 +51,22 @@ const GET_USER_PROFILE = 'github/GET_USER_PROFILE';
 const GET_USER_PROFILE_SUCCESS = 'github/GET_USER_PROFILE_SUCCESS';
 const GET_USER_PROFILE_ERROR = 'github/GET_USER_PROFILE_ERROR';
 
+type GithubState = {
+    userProfile: {
+        loading: boolean;
+        error: Error | null;
+        data: GithubProfile | null
+    }
+}
+
 export const getUserProfileAsync = createAsyncAction(
   GET_USER_PROFILE,
   GET_USER_PROFILE_SUCCESS,
   GET_USER_PROFILE_ERROR
 )<string, GithubProfile, AxiosError>();
+
+const actions = {GET_USER_PROFILE, GET_USER_PROFILE_SUCCESS, GET_USER_PROFILE_ERROR, getUserProfileAsync}
+type GithubAction = ActionType<typeof actions>;
 
 const initialState: GithubState = {
     userProfile: {
