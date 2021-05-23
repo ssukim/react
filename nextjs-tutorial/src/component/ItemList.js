@@ -16,7 +16,7 @@ const ItemListBlock = styled.div`
     color: #999;
     text-align: center;
   }
-  strong:nth-child(1) {
+  strong {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -24,7 +24,7 @@ const ItemListBlock = styled.div`
     width: 160px;
     margin: 10px auto;
   }
-  strong:nth-child(2) {
+  strong:nth-child(4) {
     font-size: 17px;
     color: #00bcd4;
     font-weight: bold;
