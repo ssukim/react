@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@material-ui/core";
+import { Button, StylesProvider } from "@material-ui/core";
 // import { styled } from "@material-ui/core/styles";
 import styled from 'styled-components';
 import { darken, lighten } from 'polished';
@@ -33,7 +33,11 @@ type Props = {
   children?: React.ReactNode
 } & Record<string, any>;
 const Component: React.FunctionComponent<Props> = ({ children,...rest }) => {
-  return <StyleButton {...rest}>children</StyleButton>;
+  return (
+    <StylesProvider injectFirst>
+      <StyleButton {...rest}>children</StyleButton>
+    </StylesProvider>
+  );
 };
 
 export default Component;
